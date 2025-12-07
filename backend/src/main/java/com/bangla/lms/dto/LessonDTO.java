@@ -1,0 +1,17 @@
+package com.bangla.lms.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class LessonDTO {
+    private Long id;
+    private Long courseId;
+    private String title;
+    private String videoUrl;
+    private String content;
+    private Integer lessonOrder;
+}
