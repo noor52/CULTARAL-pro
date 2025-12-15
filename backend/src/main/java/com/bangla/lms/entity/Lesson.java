@@ -27,7 +27,7 @@ public class Lesson {
     @Column(nullable = false, length = 500)
     private String title;
 
-    @Column(name = "video_id", nullable = false, length = 50)
+    @Column(name = "video_id", nullable = true, length = 50)
     private String videoId;
 
     @Column(columnDefinition = "TEXT")
