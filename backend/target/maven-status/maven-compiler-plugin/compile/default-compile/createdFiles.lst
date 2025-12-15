@@ -29,6 +29,7 @@ com/bangla/lms/repository/CourseRepository.class
 com/bangla/lms/controller/CourseController.class
 com/bangla/lms/dto/RegisterRequest$RegisterRequestBuilder.class
 com/bangla/lms/dto/LoginRequest.class
+com/bangla/lms/config/JwtProperties.class
 com/bangla/lms/entity/User$UserBuilder.class
 com/bangla/lms/dto/LoginRequest$LoginRequestBuilder.class
 com/bangla/lms/service/LessonService.class

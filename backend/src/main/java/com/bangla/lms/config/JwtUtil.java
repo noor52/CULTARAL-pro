@@ -4,11 +4,9 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
@@ -19,18 +17,10 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
 
-    @Value("${jwt.secret:BanglaLearningLMS2024SecretKeyForJWTAuthenticationMinimum256BitsRequired}")
-    private String secret;
+    private final JwtProperties properties;
 
-    @Value("${jwt.expiration:86400000}")
-    private Long expiration;
-
-    // Ensure expiration is non-null
-    @PostConstruct
-    private void init() {
-        if (this.expiration == null) {
-            this.expiration = 86400000L;
-        }
+    public JwtUtil(JwtProperties properties) {
+        this.properties = properties;
     }
 
     public String extractUsername(String token) {
@@ -68,7 +58,7 @@ public class JwtUtil {
                 .setClaims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + expiration))
+                .setExpiration(new Date(System.currentTimeMillis() + properties.getExpiration()))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
@@ -79,9 +69,9 @@ public class JwtUtil {
     }
 
     private Key getSigningKey() {
+        String secret = properties.getSecret();
         byte[] keyBytes = secret == null ? new byte[0] : secret.getBytes(StandardCharsets.UTF_8);
         if (keyBytes.length < 32) {
-            // Pad or repeat the secret until it's at least 32 bytes (256 bits) required for HS256
             byte[] padded = new byte[32];
             for (int i = 0; i < padded.length; i++) {
                 padded[i] = keyBytes.length == 0 ? (byte) 0 : keyBytes[i % keyBytes.length];
