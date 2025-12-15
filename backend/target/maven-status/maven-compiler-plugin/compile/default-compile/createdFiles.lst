@@ -17,6 +17,7 @@ com/bangla/lms/service/CourseService.class
 com/bangla/lms/dto/LessonDTO.class
 com/bangla/lms/config/JwtAuthenticationFilter.class
 com/bangla/lms/exception/GlobalExceptionHandler.class
+com/bangla/lms/config/ApplicationConfig.class
 com/bangla/lms/config/SecurityConfig.class
 com/bangla/lms/dto/LessonDTO$LessonDTOBuilder.class
 com/bangla/lms/exception/UserAlreadyExistsException.class

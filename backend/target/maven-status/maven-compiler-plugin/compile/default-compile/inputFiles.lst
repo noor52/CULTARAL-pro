@@ -10,6 +10,7 @@
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/repository/LessonRepository.java
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/repository/CourseRepository.java
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/config/DataInitializer.java
+/Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/config/ApplicationConfig.java
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/service/UserService.java
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/service/CourseService.java
 /Users/macbookairm1/Documents/GitHub/CULTARAL-pro2/backend/src/main/java/com/bangla/lms/entity/User.java

@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 @RequiredArgsConstructor
 public class DataInitializer implements CommandLineRunner {
@@ -22,7 +24,7 @@ public class DataInitializer implements CommandLineRunner {
         course1.setDescription("Learn the foundation of Bangla language with all vowels and consonants. Perfect for absolute beginners.");
         course1.setLevel("Beginner");
         course1.setThumbnailUrl("https://images.pexels.com/photos/8519791/pexels-photo-8519791.jpeg?auto=compress&cs=tinysrgb&w=800");
-        course1.setPrice("Free");
+        course1.setPrice(BigDecimal.valueOf(0.0));
         course1 = courseRepository.save(course1);
 
         Course course2 = new Course();
@@ -30,7 +32,7 @@ public class DataInitializer implements CommandLineRunner {
         course2.setDescription("Master essential daily conversations in Bangla. Learn greetings, introductions, and common phrases.");
         course2.setLevel("Beginner");
         course2.setThumbnailUrl("https://images.pexels.com/photos/5212345/pexels-photo-5212345.jpeg?auto=compress&cs=tinysrgb&w=800");
-        course2.setPrice("Free");
+        course2.setPrice(BigDecimal.valueOf(0.0));
         course2 = courseRepository.save(course2);
 
         Course course3 = new Course();
@@ -38,7 +40,7 @@ public class DataInitializer implements CommandLineRunner {
         course3.setDescription("Understand the structure of Bangla language with comprehensive grammar lessons.");
         course3.setLevel("Intermediate");
         course3.setThumbnailUrl("https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=800");
-        course3.setPrice("Paid");
+        course3.setPrice(BigDecimal.valueOf(29.99));
         course3 = courseRepository.save(course3);
 
         Lesson lesson1 = new Lesson();
