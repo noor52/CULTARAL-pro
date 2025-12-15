@@ -11,6 +11,8 @@ dist
 dist-ssr
 *.local
 
+target
+
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -21,4 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 .env
-target
