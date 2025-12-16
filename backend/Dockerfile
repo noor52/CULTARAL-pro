@@ -2,7 +2,7 @@
 # STAGE 1: BUILD THE APPLICATION
 # ============================================
 # Use Maven with Java 17 to build the application
-FROM eclipse-temurin:17-jdk AS builder
+FROM maven:3.9-eclipse-temurin-17 AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -13,9 +13,6 @@ COPY pom.xml .
 
 # Copy the entire source code
 COPY src ./src
-
-# Install Maven (Alpine package manager)
-RUN apk add --no-cache maven
 
 # Build the application and create a JAR file
 # -DskipTests: Skip running tests to speed up the build
